@@ -1,4 +1,4 @@
-package com.example.mercadolibretest.itemslist.dto
+package com.example.mercadolibretest.itemSearch.dto
 
 import java.io.Serializable
 

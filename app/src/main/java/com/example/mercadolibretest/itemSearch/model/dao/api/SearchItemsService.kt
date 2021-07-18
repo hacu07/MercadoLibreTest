@@ -1,6 +1,6 @@
-package com.example.mercadolibretest.itemslist.model.dao.api
+package com.example.mercadolibretest.itemSearch.model.dao.api
 
-import com.example.mercadolibretest.itemslist.dto.ServiceResponse
+import com.example.mercadolibretest.itemSearch.dto.ServiceResponse
 import com.example.mercadolibretest.utils.Endpoints
 import retrofit2.Call
 import retrofit2.http.GET

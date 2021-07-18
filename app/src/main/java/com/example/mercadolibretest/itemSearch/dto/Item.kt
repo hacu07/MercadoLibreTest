@@ -1,10 +1,10 @@
-package com.example.mercadolibretest.itemslist.dto
+package com.example.mercadolibretest.itemSearch.dto
 
 import java.io.Serializable
 
 data class Item(
     val title: String,
-    val price: Int,
+    val price: Double,
     val available_quantity: Int,
     val sold_quantity: Int,
     val thumbnail: String,

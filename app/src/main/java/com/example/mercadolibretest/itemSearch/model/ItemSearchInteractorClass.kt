@@ -1,8 +1,8 @@
-package com.example.mercadolibretest.itemslist.model
+package com.example.mercadolibretest.itemSearch.model
 
-import com.example.mercadolibretest.itemslist.event.ItemSearchEvent
-import com.example.mercadolibretest.itemslist.model.dao.api.ItemSearchAPIDao
-import com.example.mercadolibretest.itemslist.model.dao.api.ResponseCallback
+import com.example.mercadolibretest.itemSearch.event.ItemSearchEvent
+import com.example.mercadolibretest.itemSearch.model.dao.api.ItemSearchAPIDao
+import com.example.mercadolibretest.itemSearch.model.dao.api.ResponseCallback
 import org.greenrobot.eventbus.EventBus
 
 class ItemSearchInteractorClass : ItemSearchInteractor {
