@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MercadoLibreTest</string>
+    <string name="price">Price:</string>
+    <string name="available_quantity">Available:</string>
+    <string name="ERROR_RESPONSE_MESSAGE">Error response</string>
+    <string name="CONNECTION_ERROR_MESSAGE">Connection Error</string>
+    <string name="ERROR_DATA_MESSAGE">Error data.</string>
+    <string name="SUCCESS_MESSAGE">Consulta exitosa.</string>
+    <string name="DATA_ERROR_MESSAGE">No se logro obtener informacion del producto consultado, favor intente de nuevo...</string>
 </resources>
