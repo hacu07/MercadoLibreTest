@@ -9,4 +9,14 @@
     <string name="SUCCESS_MESSAGE">Consulta exitosa.</string>
     <string name="DATA_ERROR_MESSAGE">No se logro obtener informacion del producto consultado, favor intente de nuevo...</string>
     <string name="empty_text_message">Ingrese nombre del producto a consultar</string>
+    <string name="seller">Vendedor</string>
+    <string name="sales">Ventas</string>
+    <string name="available_qty">Cantidad Disponible</string>
+    <string name="sold_qty">Cantidad Vendida</string>
+    <string name="seller_profile">Perfil</string>
+    <string name="rating">Calificaciones</string>
+    <string name="rating_positive">Positivo</string>
+    <string name="rating_negative">Negativo</string>
+    <string name="rating_neutral">Neutral</string>
+    <string name="attributes">Caracteristicas</string>
 </resources>

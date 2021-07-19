@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MercadoLibreTest"
         android:usesCleartextTraffic="true">
-        <activity android:name=".itemDetail.view.ItemDetailActivity"></activity>
+        <activity android:name=".itemDetail.view.ItemDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
         <activity
             android:name=".itemSearch.view.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize">

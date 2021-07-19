@@ -62,7 +62,7 @@ class ItemsAdapter(
             }
 
             item_name.setText(item.title)
-            item_price.setText(item.price.toString())
+            item_price.setText("$"+item.price.toInt().toString())
             item_available.setText(item.available_quantity.toString())
 
             cvItem.setOnClickListener {

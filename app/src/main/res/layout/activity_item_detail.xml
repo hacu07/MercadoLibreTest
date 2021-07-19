@@ -4,6 +4,323 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".itemDetail.view.ItemDetailActivity">
+    tools:context=".itemDetail.view.ItemDetailActivity"
+    android:background="@color/yellow"
+    android:orientation="vertical"
+    >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/padding_8">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_image_height"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:cardCornerRadius="@dimen/padding_4">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/glHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.4"/>
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/glHeaderHorizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.75"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvImage"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/glHeader"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:cardCornerRadius="@dimen/padding_4">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imageItemDetail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/titleItemDetail"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintStart_toEndOf="@id/glHeader"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/glHeaderHorizontal"
+                            android:padding="@dimen/padding_4"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:gravity="center_vertical"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            tools:text="Item Product Name"
+                            />
+
+                        <TextView
+                            android:id="@+id/priceItemDetail"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintStart_toEndOf="@id/glHeader"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/glHeaderHorizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:padding="@dimen/padding_4"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/holo_blue_light"
+                            android:gravity="center_vertical"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            tools:text="Item Product Name"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvQtyItemDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/cvHeader"
+                    android:layout_marginTop="@dimen/margin_8"
+                    app:cardCornerRadius="@dimen/padding_4">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_8"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/qtyAvailableLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sales"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilQtyAvailable"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/available_qty"
+                            android:clickable="false"
+                            app:layout_constraintTop_toBottomOf="@id/qtyAvailableLabel"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/qtyAvailableItemDetail"
+                                android:layout_width="match_parent"
+                                android:clickable="false"
+                                android:enabled="false"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilQtySold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/sold_qty"
+                            android:clickable="false"
+                            android:foregroundTint="@color/black"
+                            app:layout_constraintTop_toBottomOf="@id/tilQtyAvailable"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/qtySoldItemDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:enabled="false"
+                                android:foregroundTint="@color/black"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvSeller"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/cvQtyItemDetail"
+                    android:layout_marginTop="@dimen/margin_8">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_8">
+
+                        <TextView
+                            android:id="@+id/sellerLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/seller"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilSellerProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/seller_profile"
+                            app:layout_constraintTop_toBottomOf="@id/sellerLabel"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/sellerProfileItemDetail"
+                                android:layout_width="match_parent"
+                                android:editable="false"
+                                android:textColor="@android:color/holo_blue_light"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/ratingLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/rating"
+                            app:layout_constraintTop_toBottomOf="@id/tilSellerProfile"
+                            android:layout_marginTop="@dimen/margin_8"
+                            />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilRatingPositive"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/rating_positive"
+                            android:clickable="false"
+                            app:layout_constraintTop_toBottomOf="@id/ratingLabel"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/RatingPositiveItemDetail"
+                                android:layout_width="match_parent"
+                                android:clickable="false"
+                                android:enabled="false"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilRatingNegative"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/rating_negative"
+                            android:clickable="false"
+                            app:layout_constraintTop_toBottomOf="@id/tilRatingPositive"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/RatingNegativeItemDetail"
+                                android:layout_width="match_parent"
+                                android:clickable="false"
+                                android:enabled="false"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilRatingNeutral"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/rating_neutral"
+                            android:clickable="false"
+                            app:layout_constraintTop_toBottomOf="@id/tilRatingNegative"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/RatingNeutralItemDetail"
+                                android:layout_width="match_parent"
+                                android:clickable="false"
+                                android:enabled="false"
+                                android:layout_height="wrap_content"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvAttributes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/cvSeller"
+                    android:layout_marginTop="@dimen/margin_8">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_8">
+
+                        <TextView
+                            android:id="@+id/attributeLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/attributes"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintTop_toBottomOf="@id/attributeLabel"
+                            android:layout_marginTop="@dimen/margin_8">
+
+                            <LinearLayout
+                                android:id="@+id/attibutesContent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                            </LinearLayout>
+
+                        </ScrollView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

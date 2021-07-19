@@ -1,5 +1,6 @@
 package com.example.mercadolibretest.itemSearch.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mercadolibretest.R
+import com.example.mercadolibretest.itemDetail.view.ItemDetailActivity
 import com.example.mercadolibretest.itemSearch.ItemSearchPresenter
 import com.example.mercadolibretest.itemSearch.ItemSearchPresenterClass
 import com.example.mercadolibretest.itemSearch.dto.Item
@@ -20,6 +22,10 @@ import com.example.mercadolibretest.utils.Util
 
 class MainActivity : AppCompatActivity(), ItemSearchView, OnItemClickListener,
         SearchView.OnQueryTextListener, SearchView.OnCloseListener {
+
+    companion object{
+        const val EXTRAS_NAME = "main.activity.extras"
+    }
 
     private lateinit var svItem: SearchView
     private lateinit var rvItems: RecyclerView
@@ -116,7 +122,12 @@ class MainActivity : AppCompatActivity(), ItemSearchView, OnItemClickListener,
     }
 
     override fun onClickItem(item: Item) {
-        Toast.makeText(this,item.title,Toast.LENGTH_LONG).show()
+        var bundle = Bundle()
+        bundle.putSerializable(ItemDetailActivity.BUNDLE_NAME,item)
+        val intent = Intent(this, ItemDetailActivity::class.java).apply {
+            putExtra(EXTRAS_NAME,item)
+        }
+        startActivity(intent)
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
