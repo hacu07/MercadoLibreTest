@@ -58,9 +58,9 @@ class ItemDetailActivity : AppCompatActivity() {
             val tilSellerProfile = findViewById<TextInputLayout>(R.id.tilSellerProfile)
 
             sellerProfileItemDetail.setText(it!!.seller?.permalink)
-            ratingPositiveItemDetail.setText(it!!.seller?.seller_reputation?.transactions?.ratings?.positive?.toString())
-            ratingNegativeItemDetail.setText(it!!.seller?.seller_reputation?.transactions?.ratings?.negative?.toString())
-            ratingNeutralItemDetail.setText(it!!.seller?.seller_reputation?.transactions?.ratings?.neutral?.toString())
+            ratingPositiveItemDetail.setText((it!!.seller?.seller_reputation?.transactions?.ratings?.positive!! * 100).toInt().toString() + "%")
+            ratingNegativeItemDetail.setText((it!!.seller?.seller_reputation?.transactions?.ratings?.negative!! * 100).toInt().toString() + "%")
+            ratingNeutralItemDetail.setText((it!!.seller?.seller_reputation?.transactions?.ratings?.neutral!! * 100).toInt().toString() + "%")
 
             sellerProfileItemDetail.setOnClickListener {view ->
                 val url = Uri.parse(it!!.seller?.permalink)
