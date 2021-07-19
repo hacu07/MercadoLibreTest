@@ -53,6 +53,8 @@ class MainActivity : AppCompatActivity(), ItemSearchView, OnItemClickListener,
         tvInfoMessage = findViewById(R.id.tvInfoMessage)
         progress_circular = findViewById(R.id.progress_circular)
 
+        showMessage(R.string.empty_text_message)
+
         rvItems.layoutManager = LinearLayoutManager(this)
         svItem.setOnQueryTextListener(this)
         svItem.setOnCloseListener(this)
